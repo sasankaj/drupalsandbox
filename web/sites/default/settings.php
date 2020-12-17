@@ -785,7 +785,7 @@ $settings['config_sync_directory'] = dirname(DRUPAL_ROOT) . '/config/default';
 // Get Database details from environment variables.
 $dbName=getenv("DB_NAME");
 $dbUser=getenv("DB_USER");
-$dbPass=getenv("DB_PASS");
+$dbPass=getenv("DB_PASSWORD");
 $dbHost=getenv("DB_HOST");
 
 $databases['default']['default'] = [
