@@ -21,6 +21,8 @@
         "cweagans/composer-patches": "^1.6",
         "drupal/core-composer-scaffold": "^9.0",
         "drupal/core-recommended": "^9.0",
+        "drupal/search_api": "^1.18",
+        "drupal/search_api_solr": "^4.1",
         "drush/drush": "^10.3",
         "vlucas/phpdotenv": "^5.1",
         "webflo/drupal-finder": "^1.2"
@@ -37,7 +39,11 @@
     "prefer-stable": true,
     "config": {
         "discard-changes": true,
-        "sort-packages": true
+        "sort-packages": true,
+        "platform": {
+            "php": "7.4"
+        }
+
     },
     "autoload": {
         "classmap": [
