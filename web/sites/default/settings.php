@@ -282,7 +282,7 @@ $databases = [];
  *   $settings['hash_salt'] = file_get_contents('/home/example/salt.txt');
  * @endcode
  */
-$settings['hash_salt'] = '';
+$settings['hash_salt'] = 'w9V0mCqiXS7LQlbifZFfmuVSBGKLDQy-phpGimM8Z_oJD4n0ZB_xoFQRYUfP9xOn4jbF1u4gPQ';
 
 /**
  * Deployment identifier.
@@ -775,27 +775,8 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
  *
  * Keep this code block at the end of this file to take full effect.
  */
-#
-# if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
-#   include $app_root . '/' . $site_path . '/settings.local.php';
-# }
+
+if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
+  include $app_root . '/' . $site_path . '/settings.local.php';
+}
 $settings['config_sync_directory'] = dirname(DRUPAL_ROOT) . '/config/default';
-
-
-// Get Database details from environment variables.
-$dbName=getenv("DB_NAME");
-$dbUser=getenv("DB_USER");
-$dbPass=getenv("DB_PASSWORD");
-$dbHost=getenv("DB_HOST");
-
-$databases['default']['default'] = [
-  'database' => $dbName,
-  'username' => $dbUser,
-  'password' => $dbPass,
-  'prefix' => '',
-  'host' => $dbHost,
-  'port' => '3306',
-  'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
-  'driver' => 'mysql',
-];
-
